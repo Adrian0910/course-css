@@ -1,0 +1,112 @@
+/* body {
+    background: gray;
+}
+
+h1 {
+    color: brown;
+    font-size: 50px;
+    text-shadow: 0px 0px 10px white;
+}
+
+
+//##################SELECTORES######################
+
+Selector universal
+    nos permite seleccionar todo el documento HTML para asignar estilos CSS
+    El selector universal es *{}
+ */
+ *{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+/* Selector de etiqueta */
+
+h1{
+    background: red;
+    color: white;
+    padding: 10px;
+}
+a{
+    font-size: 18px;
+    color: green;
+    text-decoration: none;
+}
+
+footer a{ /* Esto ya es un selector compuesto, seleccionamos la etiqueta a dentro de la etiqueta de footer */
+
+}
+
+/* Selector de id
+    NOTA: Como el las hojas de css se leen de arriba a abajo, el último estilo es el que se sobreescribe*/
+#descripcion{
+    border: 5px solid black;
+    padding: 15px;
+}
+
+/* Selector de clase */
+.parrafo{
+    font-style: italic;
+    /* text-decoration: underline; */
+    font-weight: bold;
+}
+.parrafo1, .parrafo3{
+    background-color: green;
+    color: white;
+    padding: 10px;
+}
+.parrafo3{
+    background-color: orange;
+    color: black;
+}
+
+/* Selector de atributo */
+
+#usuario form{
+    border: 5px solid blue;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+#usuario form *{
+    display: block;
+}
+
+/* Este es el selector de atributo, los corchetes nos ayudan a elegir el elemento dentro de la etiqueta de manera particualr */
+input[type="text"]{
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 300px;
+}
+input[type="submit"]{
+    background: green;
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+/* Selectores hijos */
+#menu > li > a{
+    font-size: 18px;
+    color: red;
+    text-decoration: none;
+}
+
+/* Prioridad de los elementos, en este caso la regla #saludo h1 es la que se sobreescribe porque
+    es mas especifica y CSS premia la especifidad
+
+#saludo h1{
+    background: brown;
+}
+
+h1{
+    background: purple !important; //El important da maxima prioridad 
+}
+*/
+
+
+
