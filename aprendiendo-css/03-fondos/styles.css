@@ -1,0 +1,32 @@
+body{
+    /* background-color: #ccc;
+    background-image: url("../fondos/pattern-02.png");
+    background-repeat: repeat;
+    background-size: 100% 100%; /* Podemos definir en que partes y cuanto de cada pantalla estara ocupando 
+    background-attachment: fixed;
+    background-position: right bottom; */
+    color: black;
+    text-indent: 15px;
+    /* word-spacing: 10px;
+    letter-spacing: 5px; */
+}
+
+#caja{
+    border: 5px solid black;
+    padding: 10px;
+    background-color: rgb(23, 80, 185);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    /* line-height: 50px; */
+    text-transform: uppercase;
+    text-decoration: line-through;
+    vertical-align: top;
+}
+h2{
+    color: red;
+    background: white;
+    background-image: url(../fondos/pattern-01.jpg);
+    border: 5px solid red;
+    
+}

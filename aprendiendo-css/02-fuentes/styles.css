@@ -1,0 +1,31 @@
+@font-face {
+  font-family: KarantinaFuenteCustom;
+  src: url(../fonts/Karantina-Regular.ttf);
+}
+
+h1 {
+  font-family: 'Orelega One', cursive;
+  font-style: italic;
+  text-transform: uppercase; /* Permite poner en mayúsculas o minúsculas */
+}
+h2 {
+  font-family: KarantinaFuenteCustom, 'Comic Sans MS';
+  font-size: 35px;
+  font-weight: lighter;
+
+  /* Colores */
+
+  /* Colores del sistema*/
+  color: mediumpurple;
+  /* Colores hexadecimales*/
+  color: #aaa;
+  /* Colores RGB*/
+  color: rgb(255, 225, 107);
+  /* Colores RGBA, la diferencia es que tienen trasnparencia*/
+  color: rgb(255, 225, 38, 1);
+}
+p {
+  font-family: sans-serif;
+  font-size: 18px;
+  font-weight: bold; /* Este es para la anchura de letra, se puede hacer con números */
+}
