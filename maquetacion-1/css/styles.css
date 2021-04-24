@@ -110,7 +110,7 @@ body {
 /* MENÚ DESPLEGABLE */
 #nav > ul > li > ul{
     display: none;
-    position: absolute; /* no desfigura la estructura */
+    position: absolute; /* no desfigura la estructura */ 
     width: 160px;
     box-shadow: 0px 2px 2px #808080;
     z-index: 1; /* se destaca sobre cualquier elemento */
