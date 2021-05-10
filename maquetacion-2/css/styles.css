@@ -50,7 +50,7 @@ body {
   font-family: 'WebSymbolsRegular';
 }
 
-.clearfix{
+.clearfix {
   float: none;
   clear: both;
 }
@@ -78,12 +78,47 @@ body {
   transition: all 300ms;
 }
 
+#logo:hover {
+  border-radius: 2px;
+  color: black;
+  background-color: #ccc;
+}
+
 #logo .gear {
   display: block;
   float: left;
   font-size: 30px;
   margin-top: 8px;
   margin-left: 26px;
+  animation-name: rotate-gear;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate-gear {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+#logo:hover .gear {
+  animation: fromBellow 500ms linear;
+}
+
+@keyframes fromBellow {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 #logo h3 {
@@ -93,6 +128,19 @@ body {
   margin-top: 5px;
   margin-right: 65px;
   transition: all 300ms;
+}
+
+#logo:hover h3 {
+  animation: fromRight 500ms linear;
+}
+
+@keyframes fromRight {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
 #menu {
@@ -130,6 +178,17 @@ body {
   background: url('../img/bakbaner.png');
   background-position: -200px -200px;
   margin: 20px auto;
+  animation: backBanner 10s linear;
+  overflow: hidden;
+}
+
+@keyframes backBanner {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -200px -200px;
+  }
 }
 
 #banner h1 {
@@ -142,6 +201,30 @@ body {
   font-weight: normal;
   text-shadow: 2px 2px 1px black;
   margin: 27px auto;
+  animation: showText 10s linear;
+}
+
+@keyframes showText {
+  0% {
+    transform: translateX(-600%) scale(5, 5);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(600%) scale(5, 5);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-600%) scale(5, 5);
+    text-shadow: none;
+    color: transparent;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%) scale(1, 1);
+    text-shadow: 2px 2px 1px black;
+    color: white;
+    opacity: 1;
+  }
 }
 
 /* TARJETAS */
@@ -157,7 +240,11 @@ body {
   margin: 22px;
   margin-top: 40px;
   cursor: pointer;
-  transition: all;
+  transition: all 300ms;
+}
+
+.card:hover {
+  background: black;
 }
 
 .card :last-child {
@@ -172,6 +259,22 @@ body {
   line-height: 110px;
   text-align: center;
   margin: 0px auto;
+  transition: all 300ms;
+}
+
+.card:hover .icon {
+  font-size: 70px;
+  color: #37bcf9;
+  animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0%);
+  }
 }
 
 .card .category {
@@ -182,6 +285,23 @@ body {
   font-weight: bold;
   text-align: center;
   color: #00538c;
+  transition: all 300ms;
+}
+
+.card:hover .category {
+  color: white;
+  animation: showCategory 400ms linear;
+}
+
+@keyframes showCategory {
+  from {
+    transform: translateY(-300%);
+    color: black;
+  }
+  to {
+    transform: translateY(0%);
+    color: white;
+  }
 }
 
 .card .description {
@@ -189,6 +309,23 @@ body {
   text-align: center;
   color: #045f9c;
   font-size: 15px;
+  transition: all 300ms;
+}
+
+.card:hover .description {
+  color: white;
+  animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription {
+  from{
+    transform: translateX(-300%);
+    color: black;
+  }
+  to{
+    transform: translateX(0%);
+    color: white;
+  }
 }
 
 /* BARRA LATERAL */
@@ -274,8 +411,8 @@ aside h3:first-child {
     0px 1px white inset, 0px -3px 2px rgba(0, 0, 0, 0.3) inset;
 }
 
-#login input[type="email"],
-#login input[type="password"]{
+#login input[type='email'],
+#login input[type='password'] {
   display: block;
   margin: 0px auto;
   margin-top: 20px;
@@ -288,14 +425,14 @@ aside h3:first-child {
   color: gray;
 }
 
-#login input[type="email"]:focus,
-#login input[type="password"]:focus{
+#login input[type='email']:focus,
+#login input[type='password']:focus {
   color: #555;
   box-shadow: 1px 1px 1px grey inset;
 }
 
 #login #user,
-#login #password{
+#login #password {
   display: block;
   text-align: center;
   position: absolute;
@@ -305,16 +442,16 @@ aside h3:first-child {
   font-size: 20px;
 }
 
-#login #password{
+#login #password {
   margin-left: 18px;
   margin-top: 25px;
   font-size: 20px;
 }
 
-#login input[type="submit"],
-#login input[type="button"],
-#login input[type="reset"],
-#login button{
+#login input[type='submit'],
+#login input[type='button'],
+#login input[type='reset'],
+#login button {
   /* display: block; */
   text-align: center;
   width: 100px;
@@ -326,21 +463,21 @@ aside h3:first-child {
   border-radius: 0px;
   cursor: pointer;
   font-size: 15px;
-  font-family: "TrebuchetMS";
+  font-family: 'TrebuchetMS';
   font-weight: lighter;
   margin-left: 17px;
   transition: all 300ms;
   margin-bottom: 15px;
 }
 
-#login input[type="submit"]:hover,
-#login input[type="button"]:hover,
-#login input[type="reset"]:hover,
-#login button:hover{
+#login input[type='submit']:hover,
+#login input[type='button']:hover,
+#login input[type='reset']:hover,
+#login button:hover {
   box-shadow: 0px 0px 3px gray;
 }
 
-#login a{
+#login a {
   display: block;
   font-size: 14px;
   text-decoration: none;
@@ -349,16 +486,16 @@ aside h3:first-child {
   color: #555;
 }
 
-#login a:hover{
+#login a:hover {
   text-decoration: underline;
   color: #2f78bc;
 }
 
-#social{
+#social {
   height: 190px;
 }
 
-#social a{
+#social a {
   display: block;
   color: #333;
   text-decoration: none;
@@ -369,19 +506,18 @@ aside h3:first-child {
 }
 
 /* ARTICULOS */
-#articles{
+#articles {
   float: left;
   width: 860px;
-
 }
 
-#articles h2{
+#articles h2 {
   display: block;
   width: 100%;
   height: 75px;
   line-height: 75px;
   text-align: center;
-  font-family: "BebasNeue";
+  font-family: 'BebasNeue';
   font-size: 40px;
   font-weight: normal;
   letter-spacing: 2px;
@@ -393,34 +529,34 @@ aside h3:first-child {
   margin-bottom: 15px;
 }
 
-#articles article{
+#articles article {
   width: 100%;
   height: auto;
   border: 1px solid #ccc;
   margin: 40px auto;
   padding: 10px;
-  font-family: "TrebuchetMS";
+  font-family: 'TrebuchetMS';
   background: white;
   color: black;
   box-shadow: 1px 1px 2px #ddd;
 }
 
-#articles article h4{
+#articles article h4 {
   display: block;
   font-size: 23px;
   margin: 3px;
 }
 
-#articles article h4 a{
+#articles article h4 a {
   text-decoration: none;
   color: #00538c;
 }
 
-#articles article h4 a:hover{
+#articles article h4 a:hover {
   text-decoration: underline;
 }
 
-#articles .data{
+#articles .data {
   float: right;
   background: #393d3f;
   color: white;
@@ -432,28 +568,28 @@ aside h3:first-child {
   border-radius: 0px 0px 0px 5px;
 }
 
-#articles .data span{
+#articles .data span {
   margin: 6px;
 }
 
-#articles article p{
+#articles article p {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 15px;
 }
 
-#blog{
+#blog {
   padding-left: 0%;
   height: 100px;
   margin-top: 60px;
   line-height: 100px;
   text-align: center;
-  font-family: "BebasNeue";
+  font-family: 'BebasNeue';
 }
 
-#blog a{
+#blog a {
   display: block;
-  font-family: "BebasNeue";
+  font-family: 'BebasNeue';
   font-size: 40px;
   letter-spacing: 3px;
   color: #00538c;
@@ -461,7 +597,7 @@ aside h3:first-child {
 }
 
 /* FOOTER */
-#footer{
+#footer {
   width: 100%;
   height: 470px;
   background: black;
@@ -469,55 +605,54 @@ aside h3:first-child {
   overflow: hidden;
 }
 
-#footer .wrap > div{
+#footer .wrap > div {
   float: left;
   width: 320px;
   height: 370px;
   margin: 40px;
   text-align: center;
   color: white;
-  font-family: "TrebuchetMS";
+  font-family: 'TrebuchetMS';
 }
 
-#footer a{
+#footer a {
   text-decoration: none;
   color: #37bcf9;
   transition: all 300ms;
 }
 
-#footer h5{
+#footer h5 {
   display: block;
   background: url(../img/pxgray.png), white;
   height: 50px;
   letter-spacing: 2px;
   text-align: center;
-  font-family: "BebasNeue";
+  font-family: 'BebasNeue';
   font-size: 40px;
   line-height: 55px;
   color: black;
   border-radius: 5px;
   margin-bottom: 15px;
-
 }
 
-#footer ul{
+#footer ul {
   text-align: left;
   margin: 20px;
   font-size: 25px;
 }
 
-#footer ul li{
+#footer ul li {
   margin-top: 10px;
   padding: 5px;
   border-bottom: 1px solid #ccc;
 }
 
-#footer ul li a{
+#footer ul li a {
   display: block;
   height: 40px;
 }
 
-#footer iframe{
+#footer iframe {
   width: 100%;
   height: 300px;
   margin-top: 10px;
@@ -526,10 +661,10 @@ aside h3:first-child {
   box-shadow: 0px 0px 5px gray;
 }
 
-#footer img{
+#footer img {
   margin-bottom: 15px;
 }
 
-#footer #browsers img{
+#footer #browsers img {
   width: 45px;
 }
