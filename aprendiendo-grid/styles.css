@@ -1,0 +1,62 @@
+body{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.layout{
+    width: 80%;
+    height: 600px;
+    margin: 0px auto;
+
+    display: grid; /* Define el contenedor de grid */
+    grid-template-columns: repeat(3, 1fr); /* organiza todo en columnas, para repetir columnas: repeat(2, calc(25% - 10px)) 15% 35%;*/
+    grid-template-rows: repeat(2, 1fr) 3fr repeat(2, 1fr);
+    grid-gap: 10px;  /* Espacio entre elementos div */
+ 
+    border: 3px solid orangered;
+}
+
+.layout .caja{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    border: 4px solid #222;
+    background: gray;
+}
+
+.layout .red{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: red;
+}
+
+.layout .blue{
+    background: blue;
+    grid-column: 2 / 4;
+}
+
+.layout .green{
+    background: green;
+    grid-row: 2 / 6;
+}
+
+.layout .pink{
+    background: palevioletred;
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+}
+
+.layout .orange{
+    background: orange;
+    grid-row: 3 / 5;
+}
+
+.layout .light-blue{
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    grid-column: 2 / 4;
+    background: lightblue;
+}
+
+
